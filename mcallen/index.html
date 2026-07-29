@@ -3,99 +3,286 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b2337">
-<title>McAllen Shopping · Guía familiar</title>
+<meta name="theme-color" content="#082337">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="McAllen Go">
+<meta name="description" content="Guía familiar interactiva de shopping en McAllen y Pharr: puentes, rutas, tiendas, comida, presupuesto y checklist.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon.svg">
+<title>McAllen Go · Guía familiar</title>
 <style>
-:root{--bg:#f3f6f8;--ink:#152432;--muted:#637384;--brand:#0b6d6b;--brand2:#ffb24a;--card:#fff;--line:#dce5ea;--danger:#b54040;--shadow:0 10px 30px #17354a18}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-rounded,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:86px}button,a,input,textarea{font:inherit}.hero{padding:max(26px,env(safe-area-inset-top)) 18px 20px;background:linear-gradient(145deg,#071d30,#0b3e4d 58%,#0b6d6b);color:white}.heroTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;opacity:.75}.hero h1{font-size:30px;line-height:1.04;margin:7px 0 8px}.hero p{margin:0;line-height:1.45;color:#d8edf0;max-width:650px}.share{border:0;background:#ffffff18;color:white;border:1px solid #ffffff40;border-radius:14px;padding:10px 12px;font-weight:800}.status{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 0}.pill{background:#ffffff12;border:1px solid #ffffff20;border-radius:16px;padding:12px}.pill b{display:block;font-size:14px}.pill span{font-size:12px;color:#d4e7e9}.wrap{max-width:850px;margin:auto;padding:14px}.notice{background:#fff7e7;border:1px solid #f2d391;border-radius:16px;padding:14px;line-height:1.4;margin-bottom:14px}.notice b{color:#7d4b00}.section{display:none}.section.active{display:block}.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:20px;padding:16px;margin:0 0 13px}.card h2,.card h3{margin:0 0 8px}.card p{color:var(--muted);line-height:1.45;margin:6px 0}.badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800;background:#e8f5f3;color:#08615d;margin:0 5px 5px 0}.badge.gold{background:#fff0d7;color:#8a5100}.badge.gray{background:#edf1f4;color:#4b5b68}.route{display:grid;grid-template-columns:34px 1fr;gap:10px;position:relative}.route+.route{margin-top:9px}.num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;font-weight:900;z-index:1}.route:not(:last-child):after{content:"";position:absolute;left:14px;top:30px;bottom:-11px;width:2px;background:#b9d8d5}.route b{display:block}.route small{display:block;color:var(--muted);line-height:1.35;margin-top:3px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border:0;border-radius:12px;padding:10px 12px;background:#e9f2f3;color:#123d47;font-weight:850}.btn.primary{background:var(--brand);color:white}.btn.gold{background:var(--brand2);color:#432600}.filters{display:flex;overflow:auto;gap:8px;padding:2px 0 12px;scrollbar-width:none}.filter{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:999px;padding:9px 12px;color:var(--ink);font-weight:800}.filter.active{background:var(--ink);color:white}.place{display:grid;grid-template-columns:45px 1fr;gap:12px}.icon{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:#edf5f5;font-size:23px}.place h3{font-size:17px}.place address{font-style:normal;color:var(--muted);font-size:13px;line-height:1.35}.place.done{opacity:.56}.place.done h3{text-decoration:line-through}.check{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.check:last-child{border:0}.check input{width:22px;height:22px;accent-color:var(--brand);flex:0 0 auto}.check label{line-height:1.35}.mapBox{background:linear-gradient(#e9f3f2,#f7efe3);border-radius:22px;overflow:hidden;border:1px solid var(--line)}#map{width:100%;height:auto;display:block}.road{stroke:#fff;stroke-width:9;fill:none;stroke-linecap:round;filter:drop-shadow(0 1px 1px #6d7b8030)}.roadMain{stroke:#f7c165;stroke-width:13}.roadLabel{font-size:9px;fill:#61717c;font-weight:700}.pin{cursor:pointer}.pin circle{fill:#0b6d6b;stroke:white;stroke-width:3}.pin text{fill:white;font-size:9px;font-weight:900;text-anchor:middle;dominant-baseline:middle}.mapLegend{padding:12px;font-size:13px;color:var(--muted);background:white}.mapInfo{margin-top:12px}.search{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white;margin-bottom:12px}.notes{width:100%;min-height:220px;resize:vertical;border:1px solid var(--line);border-radius:16px;padding:14px;background:white;line-height:1.5}.saved{font-size:12px;color:var(--brand);font-weight:800;margin-top:8px}.bottom{position:fixed;z-index:20;left:0;right:0;bottom:0;padding:8px 8px max(8px,env(safe-area-inset-bottom));background:#ffffffee;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}.nav{border:0;background:none;color:#60717d;padding:6px 2px;font-size:11px;font-weight:800}.nav span{display:block;font-size:21px;margin-bottom:2px}.nav.active{color:var(--brand)}.footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 15px}.hidden{display:none!important}@media(min-width:700px){.status{grid-template-columns:repeat(4,1fr)}.placesGrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.placesGrid .card{margin:0}.hero h1{font-size:42px}}
+:root{
+  --navy:#082337;--navy2:#0a3b4a;--teal:#087e78;--teal2:#0aa79e;--gold:#ffb84d;
+  --paper:#f3f6f7;--card:#fff;--ink:#142432;--muted:#657582;--line:#dbe5e9;
+  --good:#18875d;--warn:#a45f00;--bad:#b64040;--shadow:0 12px 34px rgba(17,52,69,.12);
+  --radius:22px;--safe-bottom:max(10px,env(safe-area-inset-bottom));
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:ui-rounded,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(78px + var(--safe-bottom));-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit}button,a{touch-action:manipulation}.hidden{display:none!important}
+.hero{color:white;background:radial-gradient(circle at 90% 10%,rgba(10,167,158,.5),transparent 34%),linear-gradient(150deg,var(--navy),var(--navy2));padding:max(24px,env(safe-area-inset-top)) 17px 21px;border-radius:0 0 30px 30px;box-shadow:0 14px 40px rgba(4,32,49,.22)}
+.heroTop{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:#a9d8db;font-weight:850}.hero h1{margin:7px 0 8px;font-size:31px;line-height:1.03;letter-spacing:-.025em}.hero p{margin:0;color:#d7e9eb;line-height:1.43;font-size:14px;max-width:680px}
+.heroActions{display:flex;gap:8px}.iconBtn{width:43px;height:43px;border-radius:14px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:white;font-size:20px;display:grid;place-items:center}
+.statusGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.statusPill{min-width:0;padding:11px 12px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}.statusPill b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.statusPill span{display:block;margin-top:3px;color:#cce3e4;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.offline{position:sticky;z-index:25;top:0;background:#fff0d7;color:#754300;padding:9px 14px;text-align:center;font-size:12px;font-weight:850;border-bottom:1px solid #e9c37e}.wrap{max-width:920px;margin:auto;padding:14px}.screen{display:none}.screen.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:13px}.card.flat{box-shadow:none}.card h2,.card h3{margin:0 0 7px;letter-spacing:-.015em}.card h2{font-size:21px}.card h3{font-size:17px}.card p{margin:6px 0;color:var(--muted);line-height:1.45}.subtle{font-size:12px;color:var(--muted)}
+.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.grow{flex:1;min-width:0}.stack{display:grid;gap:9px}.chips{display:flex;gap:7px;overflow:auto;padding-bottom:3px;scrollbar-width:none}.chip{white-space:nowrap;border:1px solid var(--line);background:white;color:var(--ink);padding:9px 12px;border-radius:999px;font-weight:850;font-size:13px}.chip.active{background:var(--navy);border-color:var(--navy);color:white}.tag{display:inline-flex;align-items:center;border-radius:999px;padding:5px 8px;background:#e7f6f4;color:#086b67;font-size:11px;font-weight:900;margin:0 4px 5px 0}.tag.gold{background:#fff0d8;color:#825000}.tag.gray{background:#edf1f3;color:#52636f}.tag.red{background:#fae7e7;color:#963b3b}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:10px 13px;border:0;border-radius:13px;background:#e8f1f2;color:#173d49;text-decoration:none;font-weight:900;font-size:13px}.btn.primary{background:var(--teal);color:white}.btn.gold{background:var(--gold);color:#472800}.btn.dark{background:var(--navy);color:white}.btn.ghost{background:white;border:1px solid var(--line)}.btn.full{width:100%}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.bridgeHero{overflow:hidden;position:relative}.bridgeHero:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-65px;top:-60px;background:radial-gradient(circle,#d7f7f2,transparent 70%);pointer-events:none}.bridgeList{display:grid;gap:9px;margin-top:12px}.bridge{display:grid;grid-template-columns:43px 1fr auto;align-items:center;gap:10px;padding:12px;border-radius:16px;background:#f5f8f9;border:1px solid var(--line)}.bridgeIcon{width:43px;height:43px;border-radius:14px;background:#e7f3f3;display:grid;place-items:center;font-size:21px}.bridge b{display:block;font-size:14px}.bridge small{display:block;color:var(--muted);margin-top:2px;line-height:1.25}.openState{font-size:11px;padding:5px 8px;border-radius:999px;font-weight:950}.openState.open{background:#dff4e9;color:#16734e}.openState.closed{background:#f8e5e5;color:#9a3838}.openState.maybe{background:#fff0d5;color:#895500}
+.quickGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quick{border:1px solid var(--line);background:white;border-radius:17px;padding:14px;text-align:left}.quick span{font-size:23px}.quick b{display:block;margin-top:8px}.quick small{display:block;color:var(--muted);margin-top:3px;line-height:1.3}
+.progressTrack{height:10px;background:#edf1f3;border-radius:999px;overflow:hidden}.progressFill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:999px;transition:width .25s}.metric{font-size:28px;font-weight:950;letter-spacing:-.03em}.money{font-variant-numeric:tabular-nums}
+.routeStop{display:grid;grid-template-columns:36px 1fr;gap:10px;position:relative;padding-bottom:13px}.routeStop:last-child{padding-bottom:0}.routeStop:not(:last-child):after{content:"";position:absolute;left:17px;top:34px;bottom:-2px;width:2px;background:#bfdad8}.stopNo{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:white;font-weight:950;z-index:1}.routeStop b{display:block}.routeStop small{display:block;color:var(--muted);line-height:1.35;margin-top:3px}.routeStop.done{opacity:.48}.routeStop.done b{text-decoration:line-through}
+.placeGrid{display:grid;gap:12px}.place{display:grid;grid-template-columns:48px 1fr;gap:12px}.placeIcon{width:48px;height:48px;border-radius:16px;background:#edf6f5;display:grid;place-items:center;font-size:24px}.place h3{margin:0 0 4px}.place address{font-style:normal;color:var(--muted);font-size:12px;line-height:1.35}.place.done{opacity:.5}.place.done h3{text-decoration:line-through}.search{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:15px;background:white;color:var(--ink);margin-bottom:11px;outline:none}.search:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,126,120,.12)}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;font-size:11px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:13px;padding:11px 12px;background:white;color:var(--ink)}.field textarea{min-height:130px;resize:vertical}.totalBox{background:linear-gradient(145deg,#082337,#0c4b58);color:white;border-radius:18px;padding:15px}.totalBox small{color:#cde3e5}.totalBox .metric{margin-top:3px}
+.shopItem,.checkItem{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.shopItem:last-child,.checkItem:last-child{border:0}.shopItem input[type=checkbox],.checkItem input[type=checkbox]{width:22px;height:22px;accent-color:var(--teal)}.shopItem.done .itemName{text-decoration:line-through;opacity:.55}.itemName{font-weight:800}.itemMeta{font-size:11px;color:var(--muted);margin-top:2px}.delete{border:0;background:#f8e8e8;color:#9b4141;width:34px;height:34px;border-radius:11px;font-weight:950}.empty{text-align:center;color:var(--muted);padding:18px 8px}
+.mapCard{padding:0;overflow:hidden}.mapTop{padding:16px}.mapWrap{background:linear-gradient(#eaf4f2,#f7efe3);border-top:1px solid var(--line)}#miniMap{display:block;width:100%;height:auto}.road{fill:none;stroke:#fff;stroke-width:9;stroke-linecap:round;filter:drop-shadow(0 1px 1px rgba(90,110,120,.2))}.road.main{stroke:#f6bf65;stroke-width:14}.roadLabel{font-size:9px;fill:#62737d;font-weight:850}.pin{cursor:pointer}.pin circle{fill:var(--teal);stroke:white;stroke-width:3}.pin text{fill:white;font-size:9px;font-weight:950;text-anchor:middle;dominant-baseline:middle}.mapInfo{padding:14px;border-top:1px solid var(--line);background:white}
+.sheet{position:fixed;z-index:60;inset:0;background:rgba(3,25,39,.52);display:grid;align-items:end}.sheetPanel{background:white;border-radius:25px 25px 0 0;padding:18px 16px calc(18px + var(--safe-bottom));max-height:88vh;overflow:auto;box-shadow:0 -16px 45px rgba(3,25,39,.3)}.sheetHandle{width:44px;height:5px;border-radius:5px;background:#d8e0e3;margin:0 auto 14px}.sheet h2{margin:0 0 8px}.toast{position:fixed;z-index:80;left:50%;bottom:calc(88px + var(--safe-bottom));transform:translate(-50%,20px);background:#102c3b;color:white;padding:11px 14px;border-radius:13px;font-weight:850;font-size:13px;opacity:0;pointer-events:none;transition:.2s;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.bottom{position:fixed;z-index:40;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:7px 7px var(--safe-bottom)}.navBtn{border:0;background:transparent;color:#657681;padding:5px 2px;font-size:10px;font-weight:900}.navBtn span{display:block;font-size:21px;margin-bottom:1px}.navBtn.active{color:var(--teal)}
+.installHint{background:linear-gradient(135deg,#e8f6f4,#fff7e7);border:1px solid #cce5df}.sourceList a{display:block;color:var(--teal);text-decoration:none;font-weight:800;padding:9px 0;border-bottom:1px solid var(--line)}.sourceList a:last-child{border:0}.footer{text-align:center;color:var(--muted);font-size:11px;padding:16px 10px}
+@media(min-width:700px){.statusGrid{grid-template-columns:repeat(4,1fr)}.placeGrid{grid-template-columns:1fr 1fr}.hero h1{font-size:42px}.quickGrid{grid-template-columns:repeat(4,1fr)}.bridgeList{grid-template-columns:repeat(3,1fr)}.bridge{grid-template-columns:43px 1fr}.openState{grid-column:2}.twoCol{display:grid;grid-template-columns:1.15fr .85fr;gap:13px}.twoCol>.card{margin-bottom:0}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div id="offlineBanner" class="offline hidden">📴 Modo sin conexión: la guía funciona; Maps, Waze y filas en vivo necesitan internet.</div>
 <header class="hero">
-  <div class="heroTop"><div><div class="eyebrow">Guía familiar interactiva</div><h1>McAllen + Pharr<br>Shopping sin caos</h1></div><button class="share" id="shareBtn">Compartir ↗</button></div>
-  <p>Ruta por zonas, hoteles con desayuno, comida, compras y navegación. Porque cruzar la frontera ya trae suficiente aventura incluida.</p>
-  <div class="status"><div class="pill"><b>🚗 Cruce principal</b><span>Hidalgo o Anzaldúas</span></div><div class="pill"><b>🏨 Base recomendada</b><span>Expressway / Jackson</span></div><div class="pill"><b>🥤 Prioridad nacional</b><span>Malteada Whataburger</span></div><div class="pill"><b>🕒 Hora McAllen</b><span id="clock">—</span></div></div>
+  <div class="heroTop">
+    <div><div class="kicker">PWA familiar · McAllen / Pharr</div><h1>McAllen Go</h1><p>Compras por zonas, cruce inteligente, comida, hotel, presupuesto y checklist. Sin dar siete vueltas a la ciudad porque “ya que andamos por acá”.</p></div>
+    <div class="heroActions"><button class="iconBtn" id="installTop" aria-label="Instalar aplicación">＋</button><button class="iconBtn" id="shareTop" aria-label="Compartir guía">↗</button></div>
+  </div>
+  <div class="statusGrid">
+    <div class="statusPill"><b id="bestBridge">🚗 Calculando cruce…</b><span id="bestBridgeSub">Según horario actual</span></div>
+    <div class="statusPill"><b>🏨 Home2 o Comfort</b><span>Desayuno + base familiar</span></div>
+    <div class="statusPill"><b>🥤 Whataburger</b><span>La malteada no se negocia</span></div>
+    <div class="statusPill"><b>🕒 <span id="mcallenClock">—</span></b><span>Hora local de McAllen</span></div>
+  </div>
 </header>
+
 <main class="wrap">
-  <div class="notice"><b>Antes de salir:</b> revisa filas y horarios de los puentes. Pharr tiene fuerte operación comercial y ventanas limitadas para autos provenientes de México; no lo usaría como cruce familiar predeterminado.</div>
+<section id="home" class="screen active">
+  <article class="card bridgeHero">
+    <div class="row between"><div><span class="tag">Actualizado 2026</span><h2>Asesor de cruces</h2></div><button class="btn ghost" id="refreshBridge">Actualizar</button></div>
+    <p>No adivina filas —todavía no somos brujos fronterizos—, pero sí evalúa horarios oficiales. Antes de arrancar, abre CBP para comparar esperas.</p>
+    <div class="bridgeList" id="bridgeList"></div>
+    <div class="actions"><a class="btn primary" href="https://bwt.cbp.gov/viewAllPorts" target="_blank" rel="noopener">Ver filas CBP</a><a class="btn" href="https://puenteinternacionalanzalduas.com/Home/Contact" target="_blank" rel="noopener">Horario Anzaldúas</a><a class="btn" href="https://bridge.pharr-tx.gov/hours-of-operations/" target="_blank" rel="noopener">Horario Pharr</a></div>
+  </article>
 
-  <section id="route" class="section active">
-    <div class="card"><span class="badge">Recomendación</span><span class="badge gold">2 días</span><h2>La ruta que sí haría</h2><p>La lógica es sencilla: agrupar por zona para no manejar en zigzag como pollo sin GPS.</p></div>
-    <div class="card"><h3>Día 1 · Sur + Jackson</h3><div id="day1"></div></div>
-    <div class="card"><h3>Día 2 · Norte + extras</h3><div id="day2"></div></div>
-    <div class="card"><h3>Hotel recomendado</h3><span class="badge">Desayuno incluido</span><span class="badge gray">Familiar</span><p><b>Comfort Inn & Suites Pharr–McAllen</b> mantiene la base práctica cerca de Cage/Expressway y de la zona Jackson. Como mejora de comodidad para niños, Home2 Suites McAllen ofrece suites y cocineta.</p><div class="actions"><a class="btn primary" data-map="Comfort Inn & Suites Pharr McAllen">Abrir en Maps</a><a class="btn" href="https://www.choicehotels.com/en-mx/texas/pharr/comfort-inn-hotels/txh41" target="_blank">Ver hotel</a></div></div>
-    <div class="card"><h3>Puentes</h3><p><b>Hidalgo:</b> opción directa y flexible hacia el sur de McAllen. <b>Anzaldúas:</b> gran alternativa cuando la fila sea menor y coincida el horario. <b>Pharr:</b> opción táctica, no automática.</p><div class="actions"><a class="btn primary" href="https://bwt.cbp.gov/" target="_blank">Filas CBP</a><a class="btn" data-map="Hidalgo International Bridge">Hidalgo</a><a class="btn" data-map="Anzalduas International Bridge">Anzaldúas</a></div></div>
-  </section>
+  <article class="card">
+    <div class="row between"><div><span class="tag gold">Recomendado</span><h2>Plan familiar de 2 días</h2></div><div class="metric" id="homeProgress">0%</div></div>
+    <p>Sur/Jackson el primer día; norte/Trenton el segundo. Así las tiendas están agrupadas y los niños conservan una cantidad jurídicamente aceptable de paciencia.</p>
+    <div class="progressTrack"><div class="progressFill" id="homeProgressBar" style="width:0%"></div></div>
+    <div class="actions"><button class="btn primary" data-go="route">Ver itinerario</button><button class="btn gold" id="navDay1">Navegar Día 1</button></div>
+  </article>
 
-  <section id="mapSec" class="section">
-    <div class="card"><h2>Mapa por zonas</h2><p>Es esquemático, no sustituye navegación. Toca un número para ver el lugar y abrir la ruta.</p></div>
-    <div class="mapBox"><svg id="map" viewBox="0 0 390 520" role="img" aria-label="Mapa esquemático de McAllen y Pharr">
-      <rect width="390" height="520" fill="#eaf2ef"/><path d="M18 430 C85 392 168 410 230 372 S330 345 385 315" stroke="#b9d9df" stroke-width="30" fill="none" opacity=".8"/><text x="20" y="460" class="roadLabel">México / Río Grande</text>
-      <path class="road roadMain" d="M18 337 L372 337"/><text x="275" y="328" class="roadLabel">I‑2 / Expressway 83</text>
-      <path class="road" d="M92 495 L92 70"/><text x="98" y="92" class="roadLabel">10th St</text>
-      <path class="road" d="M208 482 L208 142"/><text x="214" y="165" class="roadLabel">Jackson Rd</text>
-      <path class="road" d="M300 475 L300 260"/><text x="306" y="282" class="roadLabel">Cage Blvd</text>
-      <path class="road" d="M42 205 L352 205"/><text x="248" y="196" class="roadLabel">Nolana Ave</text>
-      <path class="road" d="M42 115 L352 115"/><text x="253" y="106" class="roadLabel">Trenton Rd</text>
-      <g id="pins"></g></svg><div class="mapLegend">1 La Plaza · 2 Jackson shopping · 3 Hotel Pharr · 4 Grand China · 5 Hobby Lobby · 6 North McAllen · 7 Anzaldúas · 8 Hidalgo</div></div>
-    <div id="mapInfo" class="card mapInfo"><h3>Selecciona un punto</h3><p>Aquí aparecerá su información.</p></div>
-  </section>
+  <div class="quickGrid">
+    <button class="quick" data-quick="shopping"><span>🛍️</span><b>Compras</b><small>Busca tiendas y marca visitadas.</small></button>
+    <button class="quick" data-quick="food"><span>🥤</span><b>Comida</b><small>Grand China, IHOP y malteadas.</small></button>
+    <button class="quick" data-quick="budget"><span>💵</span><b>Presupuesto</b><small>Controla gastos en US$.</small></button>
+    <button class="quick" data-quick="kids"><span>🦖</span><b>Con niños</b><small>Pausas para evitar motín.</small></button>
+  </div>
 
-  <section id="places" class="section">
-    <input class="search" id="search" placeholder="Buscar tienda, comida, hotel…">
-    <div class="filters" id="filters"></div><div class="placesGrid" id="placeList"></div>
-  </section>
+  <article class="card installHint" id="installCard">
+    <div class="row"><div style="font-size:30px">📲</div><div class="grow"><h3>Instálala como app</h3><p id="installText">Se abre desde WhatsApp y puede quedar en la pantalla de inicio.</p></div></div>
+    <button class="btn dark full" id="installMain">Instalar / ver instrucciones</button>
+  </article>
+</section>
 
-  <section id="list" class="section">
-    <div class="card"><h2>Checklist del viaje</h2><p>Se guarda en este dispositivo.</p><div id="checklist"></div></div>
-    <button class="btn" id="resetBtn">Reiniciar checklist</button>
-  </section>
+<section id="route" class="screen">
+  <article class="card">
+    <div class="row between"><div><span class="tag">Ruta inteligente</span><h2>Itinerario</h2></div><button class="btn ghost" id="routeSettings">Ajustar</button></div>
+    <p id="routeSummary">2 días · ritmo familiar · hotel en Pharr o Convention Center.</p>
+    <div class="actions"><button class="btn primary" id="navCurrentDay">Navegar ruta</button><button class="btn" id="sharePlan">Compartir plan</button></div>
+  </article>
+  <div class="chips" id="dayChips"><button class="chip active" data-day="1">Día 1 · Sur/Jackson</button><button class="chip" data-day="2">Día 2 · Norte</button><button class="chip" data-day="3">Extra · Outlet</button></div>
+  <article class="card"><div id="routeStops"></div></article>
+  <article class="card mapCard">
+    <div class="mapTop"><h3>Mapa esquemático</h3><p>Toca los puntos para abrir navegación. No pretende reemplazar Maps; tampoco cobra por fingirlo.</p></div>
+    <div class="mapWrap"><svg id="miniMap" viewBox="0 0 390 510" role="img" aria-label="Mapa esquemático de McAllen y Pharr">
+      <rect width="390" height="510" fill="#eaf3f0"/><path d="M12 425 C82 390 155 408 225 373 S331 348 388 310" stroke="#b8d9df" stroke-width="30" fill="none" opacity=".82"/><text x="18" y="458" class="roadLabel">México / Río Grande</text>
+      <path class="road main" d="M15 332 L377 332"/><text x="271" y="322" class="roadLabel">I‑2 / Expressway 83</text>
+      <path class="road" d="M91 493 L91 62"/><text x="97" y="83" class="roadLabel">10th St</text>
+      <path class="road" d="M207 480 L207 135"/><text x="213" y="156" class="roadLabel">Jackson Rd</text>
+      <path class="road" d="M302 473 L302 253"/><text x="308" y="275" class="roadLabel">Cage Blvd</text>
+      <path class="road" d="M37 201 L355 201"/><text x="250" y="191" class="roadLabel">Nolana</text>
+      <path class="road" d="M37 112 L355 112"/><text x="250" y="102" class="roadLabel">Trenton</text>
+      <g id="mapPins"></g>
+    </svg></div>
+    <div class="mapInfo" id="mapInfo"><b>Selecciona un punto</b><p>Verás aquí su información y botones de navegación.</p></div>
+  </article>
+</section>
 
-  <section id="notesSec" class="section">
-    <div class="card"><h2>Notas compartidas… más o menos</h2><p>Se guardan sólo en este teléfono. Úsalas para tallas, encargos, presupuesto o la lista de familiares que “nomás quieren una cosita”.</p><textarea id="notes" class="notes" placeholder="Ejemplo: tenis talla 6, pasar por Target antes de cenar…"></textarea><div class="saved" id="saved">Guardado local automático</div></div>
-    <div class="card"><h3>Instalar como app</h3><p>En iPhone: abre esta página en Safari → Compartir → <b>Agregar a pantalla de inicio</b>. Después se abre como una app, sin buscar otra vez el enlace.</p></div>
-  </section>
-  <div class="footer">Guía personal McAllen–Pharr · Verifica horarios, precios y disponibilidad antes de salir.</div>
+<section id="places" class="screen">
+  <input class="search" id="placeSearch" placeholder="Buscar tienda, hotel, comida o zona…" autocomplete="off">
+  <div class="chips" id="placeFilters"></div>
+  <div class="placeGrid" id="placeGrid"></div>
+</section>
+
+<section id="plan" class="screen">
+  <div class="twoCol">
+    <article class="card">
+      <div class="row between"><div><span class="tag gold">US$</span><h2>Presupuesto</h2></div><button class="btn ghost" id="resetBudget">Reiniciar</button></div>
+      <div class="formGrid">
+        <div class="field"><label for="budgetTotal">Presupuesto total</label><input id="budgetTotal" type="number" min="0" step="1" inputmode="decimal" placeholder="1000"></div>
+        <div class="field"><label for="budgetSpent">Gastado</label><input id="budgetSpent" type="number" min="0" step="1" inputmode="decimal" placeholder="0"></div>
+      </div>
+      <div class="totalBox" style="margin-top:12px"><small>Disponible</small><div class="metric money" id="budgetRemaining">US$0.00</div><div class="subtle" id="budgetMessage" style="color:#cde3e5">Define un presupuesto para comenzar.</div></div>
+    </article>
+    <article class="card">
+      <span class="tag">Progreso</span><h2>Viaje listo</h2><div class="metric" id="tripReady">0%</div><div class="progressTrack"><div class="progressFill" id="tripReadyBar" style="width:0%"></div></div><p id="tripReadyText">Completa checklist y lugares para ver el progreso.</p>
+    </article>
+  </div>
+
+  <article class="card">
+    <div class="row between"><div><h2>Lista de compras</h2><p>Agrega encargos, tallas y tienda sugerida.</p></div><button class="btn primary" id="addShopItem">＋ Agregar</button></div>
+    <div id="shoppingList"></div>
+  </article>
+
+  <article class="card">
+    <div class="row between"><div><h2>Checklist del viaje</h2><p>Documentos, señal, cargadores y la cajuela optimista.</p></div><button class="btn ghost" id="resetChecklist">Reiniciar</button></div>
+    <div id="checklist"></div>
+  </article>
+</section>
+
+<section id="more" class="screen">
+  <article class="card">
+    <h2>Compartir y respaldar</h2><p>El plan puede viajar dentro del enlace de WhatsApp. No requiere cuenta ni servidor.</p>
+    <div class="actions"><button class="btn primary" id="shareAll">Compartir guía + plan</button><button class="btn" id="copyLink">Copiar enlace</button><button class="btn" id="downloadBackup">Descargar respaldo</button></div>
+  </article>
+  <article class="card">
+    <h2>Notas</h2><div class="field"><textarea id="notes" placeholder="Tallas, encargos, número de habitación, recordatorios…"></textarea></div><div class="subtle" id="notesSaved">Guardado automático en este dispositivo.</div>
+  </article>
+  <article class="card installHint">
+    <h2>Instalar en iPhone</h2><p>Abre esta página en Safari, toca <b>Compartir</b> y luego <b>Agregar a pantalla de inicio</b>. En Android, Chrome mostrará la opción de instalar.</p><button class="btn dark full" id="installMore">Instalar / instrucciones</button>
+  </article>
+  <article class="card">
+    <h2>Fuentes y límites</h2><p>Los horarios pueden cambiar. La aplicación calcula aperturas por horario, pero no inventa tiempos de espera: para eso abre CBP.</p>
+    <div class="sourceList"><a href="https://bwt.cbp.gov/viewAllPorts" target="_blank" rel="noopener">CBP · Border Wait Times</a><a href="https://puenteinternacionalanzalduas.com/Home/Contact" target="_blank" rel="noopener">Puente Anzaldúas · horario oficial</a><a href="https://bridge.pharr-tx.gov/hours-of-operations/" target="_blank" rel="noopener">Puente Pharr · horario oficial</a><a href="https://www.hilton.com/en/hotels/mfewght-home2-suites-mcallen/" target="_blank" rel="noopener">Home2 Suites McAllen</a></div>
+  </article>
+  <div class="footer">McAllen Go · versión 2.0 · datos guardados localmente · navegación y filas requieren internet.</div>
+</section>
 </main>
-<nav class="bottom">
-  <button class="nav active" data-tab="route"><span>🧭</span>Ruta</button><button class="nav" data-tab="mapSec"><span>🗺️</span>Mapa</button><button class="nav" data-tab="places"><span>🛍️</span>Lugares</button><button class="nav" data-tab="list"><span>✅</span>Lista</button><button class="nav" data-tab="notesSec"><span>📝</span>Notas</button>
+
+<nav class="bottom" aria-label="Navegación principal">
+  <button class="navBtn active" data-screen="home"><span>⌂</span>Hoy</button>
+  <button class="navBtn" data-screen="route"><span>🧭</span>Ruta</button>
+  <button class="navBtn" data-screen="places"><span>🛍️</span>Lugares</button>
+  <button class="navBtn" data-screen="plan"><span>✓</span>Plan</button>
+  <button class="navBtn" data-screen="more"><span>•••</span>Más</button>
 </nav>
+
+<div id="installSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Instalar McAllen Go</h2><div id="installInstructions"></div><div class="actions"><button class="btn primary" id="triggerInstall">Instalar ahora</button><button class="btn ghost" data-close-sheet>Cerrar</button></div></div>
+</div>
+<div id="settingsSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Ajustar itinerario</h2>
+    <div class="field"><label for="tripDays">Duración</label><select id="tripDays"><option value="1">1 día exprés</option><option value="2" selected>2 días familiar</option><option value="3">3 días + outlet</option></select></div>
+    <div class="field" style="margin-top:10px"><label for="tripPace">Ritmo</label><select id="tripPace"><option value="family" selected>Familiar / con niños</option><option value="fast">Compras intensivas</option><option value="relaxed">Tranquilo</option></select></div>
+    <div class="field" style="margin-top:10px"><label for="tripHotel">Base</label><select id="tripHotel"><option value="home2">Home2 Suites McAllen</option><option value="comfort" selected>Comfort Inn Pharr</option></select></div>
+    <div class="actions"><button class="btn primary" id="saveSettings">Aplicar</button><button class="btn ghost" data-close-sheet>Cerrar</button></div>
+  </div>
+</div>
+<div id="itemSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Agregar a la lista</h2>
+    <div class="field"><label for="itemName">Artículo</label><input id="itemName" placeholder="Ej. tenis para Ana"></div>
+    <div class="formGrid" style="margin-top:10px"><div class="field"><label for="itemStore">Tienda</label><input id="itemStore" placeholder="Ross"></div><div class="field"><label for="itemPrice">Estimado US$</label><input id="itemPrice" type="number" min="0" step="1" inputmode="decimal" placeholder="40"></div></div>
+    <div class="field" style="margin-top:10px"><label for="itemNote">Talla / nota</label><input id="itemNote" placeholder="Talla 6, negro"></div>
+    <div class="actions"><button class="btn primary" id="saveItem">Agregar</button><button class="btn ghost" data-close-sheet>Cerrar</button></div>
+  </div>
+</div>
+<div id="importSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Te compartieron un plan</h2><p>Este enlace contiene una ruta, lista y presupuesto. Puedes importarlos a este dispositivo.</p><div class="actions"><button class="btn primary" id="importPlan">Importar plan</button><button class="btn ghost" id="ignoreImport">Sólo abrir guía</button></div></div>
+</div>
+<div id="toast" class="toast"></div>
+
 <script>
+'use strict';
+const APP_VERSION='2.0.0';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const mapUrl=q=>`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+const wazeUrl=q=>`https://www.waze.com/ul?q=${encodeURIComponent(q)}&navigate=yes`;
+const directionsUrl=ids=>{const ps=ids.map(id=>spots.find(p=>p.id===id)).filter(Boolean);if(ps.length<2)return mapUrl(ps[0]?.query||'McAllen TX');const origin=encodeURIComponent(ps[0].query),destination=encodeURIComponent(ps.at(-1).query),waypoints=encodeURIComponent(ps.slice(1,-1).map(p=>p.query).join('|'));return `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}&waypoints=${waypoints}&travelmode=driving`;};
 const spots=[
-{id:'hidalgo',n:'Puente Hidalgo',cat:'Cruce',icon:'🌉',zone:'Frontera',addr:'Hidalgo International Bridge, Hidalgo, TX',desc:'Cruce flexible y directo hacia el sur de McAllen.'},
-{id:'anzalduas',n:'Puente Anzaldúas',cat:'Cruce',icon:'🌉',zone:'Frontera',addr:'Anzalduas International Bridge, Mission, TX',desc:'Alternativa útil cuando la fila es claramente menor.'},
-{id:'comfort',n:'Comfort Inn & Suites Pharr–McAllen',cat:'Hotel',icon:'🏨',zone:'Pharr',addr:'2706 N Cage Blvd, Pharr, TX 78577',desc:'Base práctica con desayuno incluido.'},
-{id:'home2',n:'Home2 Suites by Hilton McAllen',cat:'Hotel',icon:'🏨',zone:'Convention Center',addr:'525 S Ware Rd, McAllen, TX 78501',desc:'Suites, cocineta y desayuno; excelente con niños.'},
-{id:'grand',n:'Grand China Buffet',cat:'Comida',icon:'🥡',zone:'Pharr',addr:'500 N Jackson Rd, Pharr, TX 78577',desc:'Imperdible familiar de la ruta.'},
-{id:'bestbuy',n:'Best Buy Jackson',cat:'Compras',icon:'💻',zone:'Jackson',addr:'700 S Jackson Rd, McAllen, TX 78503',desc:'Electrónica dentro del corredor principal.'},
-{id:'target',n:'Target McAllen',cat:'Compras',icon:'🎯',zone:'Jackson',addr:'708 E Expressway 83, McAllen, TX 78503',desc:'Buen punto para encargos generales.'},
-{id:'ross',n:'Ross Dress for Less',cat:'Compras',icon:'👗',zone:'Jackson',addr:'1700 S Jackson Rd, McAllen, TX 78503',desc:'Ropa y hogar; ir temprano mejora la experiencia.'},
-{id:'marshalls',n:'Marshalls',cat:'Compras',icon:'🛍️',zone:'Jackson',addr:'7600 N 10th St, McAllen, TX 78504',desc:'Esta sucursal encaja mejor en el día norte.'},
-{id:'walmart',n:'Walmart Supercenter',cat:'Compras',icon:'🛒',zone:'Sur',addr:'1200 E Jackson Ave, McAllen, TX 78503',desc:'Compras finales y básicos.'},
-{id:'plaza',n:'La Plaza Mall',cat:'Compras',icon:'🏬',zone:'Sur',addr:'2200 S 10th St, McAllen, TX 78503',desc:'Bloque separado: fácil perder varias horas aquí.'},
-{id:'hobby',n:'Hobby Lobby',cat:'Compras',icon:'🎨',zone:'Norte',addr:'7600 N 10th St, McAllen, TX 78504',desc:'Mejor combinarlo con North McAllen.'},
-{id:'whataburger',n:'Whataburger Jackson',cat:'Comida',icon:'🥤',zone:'Jackson',addr:'1412 E Jackson Ave, McAllen, TX 78503',desc:'Parada oficial para malteadas.'},
-{id:'ihop',n:'IHOP',cat:'Comida',icon:'🥞',zone:'Sur',addr:'2201 W Nolana Ave, McAllen, TX 78504',desc:'Desayuno o cena casual; confirma sucursal en Maps.'},
-{id:'imas',n:'IMAS',cat:'Niños',icon:'🦖',zone:'Norte',addr:'1900 W Nolana Ave, McAllen, TX 78504',desc:'Buen descanso de tiendas para los niños.'},
-{id:'quinta',n:'Quinta Mazatlán',cat:'Niños',icon:'🌿',zone:'Sur',addr:'600 Sunset Dr, McAllen, TX 78503',desc:'Pausa tranquila cerca del aeropuerto y La Plaza.'}
+{id:'hidalgo',name:'Puente Internacional Hidalgo',cat:'Cruce',icon:'🌉',zone:'Frontera',query:'Hidalgo International Bridge, Hidalgo, TX',desc:'Abierto 24 horas; respaldo flexible para llegar al sur de McAllen.'},
+{id:'anzalduas',name:'Puente Internacional Anzaldúas',cat:'Cruce',icon:'🌉',zone:'Frontera',query:'Anzalduas International Bridge, Mission, TX',desc:'Abre de 06:00 a 22:00; buena alternativa cuando la fila sea menor.'},
+{id:'pharrbridge',name:'Puente Internacional Pharr',cat:'Cruce',icon:'🌉',zone:'Frontera',query:'Pharr-Reynosa International Bridge, Pharr, TX',desc:'Úsalo sólo cuando coincida la ventana de pasajeros y la espera convenga.'},
+{id:'comfort',name:'Comfort Inn & Suites Pharr–McAllen',cat:'Hotel',icon:'🏨',zone:'Pharr',query:'Comfort Inn & Suites Pharr McAllen, 2706 N Cage Blvd, Pharr, TX',desc:'Base práctica cerca de Cage/Expressway, con desayuno incluido.'},
+{id:'home2',name:'Home2 Suites by Hilton McAllen',cat:'Hotel',icon:'🏨',zone:'Convention Center',query:'Home2 Suites by Hilton McAllen, 525 S Ware Rd, McAllen, TX',desc:'Suites con cocina, desayuno caliente y mejor comodidad con niños.'},
+{id:'plaza',name:'La Plaza Mall',cat:'Compras',icon:'🏬',zone:'Sur',query:'La Plaza Mall, 2200 S 10th St, McAllen, TX',desc:'Centro comercial principal; dale su propio bloque de tiempo.'},
+{id:'target',name:'Target McAllen',cat:'Compras',icon:'🎯',zone:'Expressway/Jackson',query:'Target, 708 E Expressway 83, McAllen, TX',desc:'Encargos generales, farmacia CVS, Starbucks y Drive Up.'},
+{id:'marshallsSouth',name:'Marshalls Expressway',cat:'Compras',icon:'🛍️',zone:'Expressway/Jackson',query:'Marshalls, 900 E Expressway 83, McAllen, TX',desc:'La sucursal sur encaja perfecto con Target y Ross.'},
+{id:'rossSouth',name:'Ross Dress for Less Expressway',cat:'Compras',icon:'👗',zone:'Expressway/Jackson',query:'Ross Dress for Less, 620 E Expressway 83, McAllen, TX',desc:'Ropa y hogar; conviene llegar temprano para mejor selección.'},
+{id:'bestbuy',name:'Best Buy Jackson',cat:'Compras',icon:'💻',zone:'Expressway/Jackson',query:'Best Buy, 700 S Jackson Rd, McAllen, TX',desc:'La sucursal que mejor se integra a la ruta sur.'},
+{id:'walmart',name:'Walmart Supercenter Jackson',cat:'Compras',icon:'🛒',zone:'Expressway/Jackson',query:'Walmart Supercenter, 1200 E Jackson Ave, McAllen, TX',desc:'Básicos, compras finales y horario amplio.'},
+{id:'grand',name:'Grand China Buffet',cat:'Comida',icon:'🥡',zone:'Pharr/Jackson',query:'Grand China Buffet, 500 N Jackson Rd, Pharr, TX',desc:'Imperdible familiar y muy cerca del corredor Jackson.'},
+{id:'whataburger',name:'Whataburger Jackson',cat:'Comida',icon:'🥤',zone:'Expressway/Jackson',query:'Whataburger, 1412 E Jackson Ave, McAllen, TX',desc:'Parada oficial para malteadas; la ciencia aún estudia por qué son necesarias.'},
+{id:'ihopSouth',name:'IHOP Sur',cat:'Comida',icon:'🥞',zone:'Sur',query:'IHOP, 1900 S 10th St, McAllen, TX',desc:'Desayuno/cena cerca de La Plaza y el aeropuerto.'},
+{id:'hobby',name:'Hobby Lobby Trenton Crossing',cat:'Compras',icon:'🎨',zone:'Norte/Trenton',query:'Hobby Lobby, 7600 N 10th St Bldg 300, McAllen, TX',desc:'Combínalo con Marshalls, Ross y Best Buy North; cierra los domingos.'},
+{id:'marshallsNorth',name:'Marshalls North McAllen',cat:'Compras',icon:'🛍️',zone:'Norte/Trenton',query:'Marshalls, 7600 N 10th St, McAllen, TX',desc:'Mismo corredor de Hobby Lobby y Ross.'},
+{id:'rossNorth',name:'Ross North McAllen',cat:'Compras',icon:'👗',zone:'Norte/Trenton',query:'Ross Dress for Less, 7600 N 10th St, McAllen, TX',desc:'Útil si prefieren concentrar las tiendas de descuento al norte.'},
+{id:'bestbuyNorth',name:'Best Buy North McAllen',cat:'Compras',icon:'💻',zone:'Norte/Trenton',query:'Best Buy, 8012 N 10th St, McAllen, TX',desc:'Alternativa si el día norte incluye electrónica.'},
+{id:'imas',name:'International Museum of Art & Science',cat:'Niños',icon:'🦖',zone:'Norte',query:'IMAS McAllen, 1900 W Nolana Ave, McAllen, TX',desc:'Pausa con niños para cortar la maratón de tiendas.'},
+{id:'quinta',name:'Quinta Mazatlán',cat:'Niños',icon:'🌿',zone:'Sur',query:'Quinta Mazatlan, 600 Sunset Dr, McAllen, TX',desc:'Jardines y naturaleza cerca de La Plaza; descanso breve y agradable.'},
+{id:'heb',name:'H‑E‑B Plus! Pharr',cat:'Esenciales',icon:'🥑',zone:'Pharr',query:'H-E-B Plus, 1300 S Cage Blvd, Pharr, TX',desc:'Despensa y básicos cerca de la base en Pharr.'},
+{id:'walgreens',name:'Walgreens Jackson',cat:'Esenciales',icon:'💊',zone:'Jackson',query:'Walgreens near Jackson Rd McAllen TX',desc:'Farmacia y compras de emergencia.'},
+{id:'outlet',name:'Rio Grande Valley Premium Outlets',cat:'Extra',icon:'🏷️',zone:'Mercedes',query:'Rio Grande Valley Premium Outlets, Mercedes, TX',desc:'Excursión separada: no la mezcles con McAllen salvo que amen manejar.'}
 ];
-const day1=['hidalgo','plaza','target','bestbuy','ross','grand','whataburger','comfort'];
-const day2=['hobby','marshalls','imas','walmart'];
-const checks=['Pasaportes / visas vigentes','Seguro y documentos del vehículo','Revisar filas de los puentes','Reservación del hotel','Lista de tallas y encargos','Cargadores y batería portátil','Agua y snacks para los niños','Activar roaming o mapa descargado','Guardar tickets para cambios','Espacio disponible en la cajuela'];
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
-const mapUrl=a=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(a);const wazeUrl=a=>'https://www.waze.com/ul?q='+encodeURIComponent(a)+'&navigate=yes';
-function routeRow(id,i){const p=spots.find(x=>x.id===id);return `<div class="route"><div class="num">${i+1}</div><div><b>${p.icon} ${p.n}</b><small>${p.desc}</small><div class="actions"><a class="btn" href="${mapUrl(p.addr)}" target="_blank">Maps</a></div></div></div>`}
-$('#day1').innerHTML=day1.map(routeRow).join('');$('#day2').innerHTML=day2.map(routeRow).join('');
-$$('[data-map]').forEach(a=>{a.href=mapUrl(a.dataset.map);a.target='_blank'});
-let cat='Todos';const cats=['Todos',...new Set(spots.map(p=>p.cat))];$('#filters').innerHTML=cats.map(c=>`<button class="filter ${c==='Todos'?'active':''}" data-cat="${c}">${c}</button>`).join('');
-function renderPlaces(){const q=$('#search').value.toLowerCase();const done=store.get('mcallenDone',[]);const f=spots.filter(p=>(cat==='Todos'||p.cat===cat)&&(`${p.n} ${p.zone} ${p.desc}`).toLowerCase().includes(q));$('#placeList').innerHTML=f.map(p=>`<article class="card place ${done.includes(p.id)?'done':''}" data-id="${p.id}"><div class="icon">${p.icon}</div><div><span class="badge">${p.cat}</span><span class="badge gray">${p.zone}</span><h3>${p.n}</h3><address>${p.addr}</address><p>${p.desc}</p><div class="actions"><a class="btn primary" href="${mapUrl(p.addr)}" target="_blank">Google Maps</a><a class="btn" href="${wazeUrl(p.addr)}" target="_blank">Waze</a><button class="btn doneBtn">${done.includes(p.id)?'Desmarcar':'Ya fuimos'}</button></div></div></article>`).join('')||'<div class="card">No encontré coincidencias.</div>';$$('.doneBtn').forEach(b=>b.onclick=()=>{const id=b.closest('.place').dataset.id;let d=store.get('mcallenDone',[]);d=d.includes(id)?d.filter(x=>x!==id):[...d,id];store.set('mcallenDone',d);renderPlaces()})}
-renderPlaces();$('#search').oninput=renderPlaces;$$('.filter').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;$$('.filter').forEach(x=>x.classList.toggle('active',x===b));renderPlaces()});
-const savedChecks=store.get('mcallenChecks',{});$('#checklist').innerHTML=checks.map((t,i)=>`<div class="check"><input type="checkbox" id="c${i}" ${savedChecks[i]?'checked':''}><label for="c${i}">${t}</label></div>`).join('');$$('#checklist input').forEach((x,i)=>x.onchange=()=>{const c=store.get('mcallenChecks',{});c[i]=x.checked;store.set('mcallenChecks',c)});$('#resetBtn').onclick=()=>{store.set('mcallenChecks',{});$$('#checklist input').forEach(x=>x.checked=false)};
-const notes=$('#notes');notes.value=store.get('mcallenNotes','');notes.oninput=()=>{store.set('mcallenNotes',notes.value);$('#saved').textContent='Guardado ✓';clearTimeout(window.st);window.st=setTimeout(()=>$('#saved').textContent='Guardado local automático',1200)};
-$$('.nav').forEach(n=>n.onclick=()=>{$$('.nav').forEach(x=>x.classList.toggle('active',x===n));$$('.section').forEach(s=>s.classList.toggle('active',s.id===n.dataset.tab));scrollTo({top:0,behavior:'smooth'})});
-const pinData=[['plaza',92,373,1],['bestbuy',208,326,2],['comfort',300,299,3],['grand',235,356,4],['hobby',92,115,5],['marshalls',119,114,6],['anzalduas',49,450,7],['hidalgo',132,455,8]];$('#pins').innerHTML=pinData.map(([id,x,y,n])=>`<g class="pin" data-id="${id}" transform="translate(${x} ${y})"><circle r="15"/><text y="1">${n}</text></g>`).join('');$$('.pin').forEach(g=>g.onclick=()=>{const p=spots.find(x=>x.id===g.dataset.id);$('#mapInfo').innerHTML=`<h3>${p.icon} ${p.n}</h3><p>${p.desc}</p><div class="actions"><a class="btn primary" href="${mapUrl(p.addr)}" target="_blank">Abrir en Maps</a><a class="btn" href="${wazeUrl(p.addr)}" target="_blank">Waze</a></div>`});
-function clock(){try{$('#clock').textContent=new Intl.DateTimeFormat('es-MX',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit'}).format(new Date())}catch{$('#clock').textContent='Hora central'}}clock();setInterval(clock,30000);
-$('#shareBtn').onclick=async()=>{const data={title:'Guía McAllen + Pharr',text:'Guía familiar de shopping en McAllen y Pharr',url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert('Enlace copiado')}}catch{}};
+const routes={
+  1:['hidalgo','ihopSouth','plaza','target','marshallsSouth','rossSouth','bestbuy','grand','whataburger','comfort'],
+  2:['hobby','marshallsNorth','rossNorth','bestbuyNorth','imas','walmart','home2'],
+  3:['outlet']
+};
+const defaultChecklist=['Pasaportes y visas vigentes','Documentos y seguro del vehículo','Revisar filas CBP antes de salir','Reservación del hotel','Roaming o datos en EE. UU.','Cargadores y batería portátil','Agua y snacks para los niños','Lista de tallas y encargos','Espacio disponible en la cajuela','Guardar tickets para cambios'];
+const state={day:1,category:'Todos',deferredInstall:null,pendingImport:null};
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(state.toastTimer);state.toastTimer=setTimeout(()=>t.classList.remove('show'),2300)}
+function showScreen(id){$$('.screen').forEach(s=>s.classList.toggle('active',s.id===id));$$('.navBtn').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));scrollTo({top:0,behavior:'smooth'});if(id==='route')renderRoute();if(id==='places')renderPlaces();if(id==='plan'){renderShopping();renderChecklist();renderBudget()}}
+$$('.navBtn').forEach(b=>b.addEventListener('click',()=>showScreen(b.dataset.screen)));$$('[data-go]').forEach(b=>b.addEventListener('click',()=>showScreen(b.dataset.go)));
+function zonedParts(){const f=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false});const parts=Object.fromEntries(f.formatToParts(new Date()).map(p=>[p.type,p.value]));return {weekday:parts.weekday,hour:Number(parts.hour)%24,minute:Number(parts.minute)}}
+function bridgeStatuses(){const {weekday,hour,minute}=zonedParts(),mins=hour*60+minute,weekend=['Sat','Sun'].includes(weekday);return [
+  {id:'hidalgo',name:'Hidalgo',open:true,status:'Abierto',detail:'24 h · opción flexible',rank:2},
+  {id:'anzalduas',name:'Anzaldúas',open:mins>=360&&mins<1320,status:mins>=360&&mins<1320?'Abierto':'Cerrado',detail:'06:00–22:00',rank:1},
+  {id:'pharrbridge',name:'Pharr',open:weekend?((mins>=360&&mins<480)||(mins>=960&&mins<1435)):((mins>=360&&mins<480)||(mins>=960&&mins<1080)),status:'Ventana',detail:weekend?'06–08 y 16–23:55':'06–08 y 16–18',rank:3}
+]}
+function renderBridges(){const bs=bridgeStatuses();$('#bridgeList').innerHTML=bs.map(b=>`<div class="bridge"><div class="bridgeIcon">🌉</div><div><b>${b.name}</b><small>${b.detail}</small></div><span class="openState ${b.open?'open':'closed'}">${b.open?'ABIERTO':'CERRADO'}</span></div>`).join('');const recommended=bs.find(b=>b.id==='anzalduas'&&b.open)||bs[0];$('#bestBridge').textContent=`🚗 ${recommended.name} disponible`;$('#bestBridgeSub').textContent=recommended.id==='anzalduas'?'Comparar fila con Hidalgo':'Hidalgo permanece 24 h'}
+function updateClock(){try{$('#mcallenClock').textContent=new Intl.DateTimeFormat('es-MX',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit'}).format(new Date())}catch{$('#mcallenClock').textContent='Hora central'}renderBridges()}
+$('#refreshBridge').addEventListener('click',()=>{updateClock();toast('Horarios recalculados')});updateClock();setInterval(updateClock,60000);
+function currentRoute(day=state.day){const settings=store.get('mcallen.settings',{days:2,pace:'family',hotel:'comfort'});let ids=[...(routes[day]||[])];if(settings.pace==='fast')ids=ids.filter(id=>!['imas','quinta'].includes(id));if(settings.hotel==='home2')ids=ids.map(id=>id==='comfort'?'home2':id);else ids=ids.map(id=>id==='home2'?'comfort':id);if(Number(settings.days)===1&&day===1)ids=ids.filter(id=>!['ihopSouth','quinta'].includes(id));return [...new Set(ids)]}
+function renderRoute(){const done=store.get('mcallen.visited',[]),ids=currentRoute();$('#routeStops').innerHTML=ids.map((id,i)=>{const p=spots.find(x=>x.id===id);return `<div class="routeStop ${done.includes(id)?'done':''}" data-id="${id}"><div class="stopNo">${i+1}</div><div><b>${p.icon} ${p.name}</b><small>${p.desc}</small><div class="actions"><a class="btn" href="${mapUrl(p.query)}" target="_blank" rel="noopener">Maps</a><button class="btn visitBtn">${done.includes(id)?'Desmarcar':'Ya fuimos'}</button></div></div></div>`}).join('');$$('.visitBtn','#routeStops').forEach(b=>b.addEventListener('click',()=>toggleVisited(b.closest('.routeStop').dataset.id)));$('#navCurrentDay').onclick=()=>open(directionsUrl(ids),'_blank','noopener');renderProgress()}
+$$('#dayChips .chip').forEach(b=>b.addEventListener('click',()=>{state.day=Number(b.dataset.day);$$('#dayChips .chip').forEach(x=>x.classList.toggle('active',x===b));renderRoute()}));
+function toggleVisited(id){let d=store.get('mcallen.visited',[]);d=d.includes(id)?d.filter(x=>x!==id):[...d,id];store.set('mcallen.visited',d);renderRoute();renderPlaces();renderProgress()}
+function renderProgress(){const all=[...new Set([...routes[1],...routes[2]])],done=store.get('mcallen.visited',[]).filter(id=>all.includes(id)),pct=Math.round(done.length/all.length*100)||0;$('#homeProgress').textContent=`${pct}%`;$('#homeProgressBar').style.width=`${pct}%`;const checks=store.get('mcallen.checks',{}),checkPct=Math.round(Object.values(checks).filter(Boolean).length/defaultChecklist.length*100)||0,overall=Math.round((pct+checkPct)/2);$('#tripReady').textContent=`${overall}%`;$('#tripReadyBar').style.width=`${overall}%`;$('#tripReadyText').textContent=overall<40?'Todavía hay detalles importantes por preparar.':overall<80?'Va tomando forma; ya no parece expedición improvisada.':'Listos para cruzar con dignidad logística.'}
+$('#navDay1').addEventListener('click',()=>open(directionsUrl(currentRoute(1)),'_blank','noopener'));
+const cats=['Todos','Compras','Comida','Hotel','Niños','Esenciales','Cruce','Extra'];$('#placeFilters').innerHTML=cats.map(c=>`<button class="chip ${c==='Todos'?'active':''}" data-cat="${c}">${c}</button>`).join('');$$('#placeFilters .chip').forEach(b=>b.addEventListener('click',()=>{state.category=b.dataset.cat;$$('#placeFilters .chip').forEach(x=>x.classList.toggle('active',x===b));renderPlaces()}));$('#placeSearch').addEventListener('input',renderPlaces);
+function renderPlaces(){const q=($('#placeSearch').value||'').toLowerCase(),done=store.get('mcallen.visited',[]);const list=spots.filter(p=>(state.category==='Todos'||p.cat===state.category)&&`${p.name} ${p.zone} ${p.desc}`.toLowerCase().includes(q));$('#placeGrid').innerHTML=list.length?list.map(p=>`<article class="card place ${done.includes(p.id)?'done':''}" data-id="${p.id}"><div class="placeIcon">${p.icon}</div><div><span class="tag">${p.cat}</span><span class="tag gray">${p.zone}</span><h3>${p.name}</h3><address>${p.query}</address><p>${p.desc}</p><div class="actions"><a class="btn primary" href="${mapUrl(p.query)}" target="_blank" rel="noopener">Google Maps</a><a class="btn" href="${wazeUrl(p.query)}" target="_blank" rel="noopener">Waze</a><button class="btn placeVisit">${done.includes(p.id)?'Desmarcar':'Ya fuimos'}</button></div></div></article>`).join(''):'<article class="card empty">No encontré coincidencias.</article>';$$('.placeVisit','#placeGrid').forEach(b=>b.addEventListener('click',()=>toggleVisited(b.closest('.place').dataset.id)))}
+$$('[data-quick]').forEach(b=>b.addEventListener('click',()=>{const q=b.dataset.quick;if(q==='shopping'){state.category='Compras';showScreen('places');$$('#placeFilters .chip').forEach(x=>x.classList.toggle('active',x.dataset.cat==='Compras'));renderPlaces()}else if(q==='food'){state.category='Comida';showScreen('places');$$('#placeFilters .chip').forEach(x=>x.classList.toggle('active',x.dataset.cat==='Comida'));renderPlaces()}else if(q==='budget')showScreen('plan');else{state.category='Niños';showScreen('places');$$('#placeFilters .chip').forEach(x=>x.classList.toggle('active',x.dataset.cat==='Niños'));renderPlaces()}}));
+function money(v){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number(v)||0)}
+function renderBudget(){const b=store.get('mcallen.budget',{total:'',spent:''});$('#budgetTotal').value=b.total;$('#budgetSpent').value=b.spent;const rem=(Number(b.total)||0)-(Number(b.spent)||0);$('#budgetRemaining').textContent=money(rem);$('#budgetMessage').textContent=!b.total?'Define un presupuesto para comenzar.':rem<0?`Se pasaron ${money(Math.abs(rem))}. La tarjeta ya está sudando.`:rem<Number(b.total)*.2?'Queda menos del 20%. Momento de distinguir deseo de necesidad.':'Presupuesto bajo control.'}
+function saveBudget(){store.set('mcallen.budget',{total:$('#budgetTotal').value,spent:$('#budgetSpent').value});renderBudget()}
+$('#budgetTotal').addEventListener('input',saveBudget);$('#budgetSpent').addEventListener('input',saveBudget);$('#resetBudget').addEventListener('click',()=>{store.set('mcallen.budget',{total:'',spent:''});renderBudget();toast('Presupuesto reiniciado')});
+function renderChecklist(){const s=store.get('mcallen.checks',{});$('#checklist').innerHTML=defaultChecklist.map((t,i)=>`<label class="checkItem"><input type="checkbox" data-i="${i}" ${s[i]?'checked':''}><span>${t}</span><span></span></label>`).join('');$$('#checklist input').forEach(x=>x.addEventListener('change',()=>{const c=store.get('mcallen.checks',{});c[x.dataset.i]=x.checked;store.set('mcallen.checks',c);renderProgress()}));renderProgress()}
+$('#resetChecklist').addEventListener('click',()=>{store.set('mcallen.checks',{});renderChecklist();toast('Checklist reiniciado')});
+function renderShopping(){const items=store.get('mcallen.shopping',[]);$('#shoppingList').innerHTML=items.length?items.map((it,i)=>`<div class="shopItem ${it.done?'done':''}" data-i="${i}"><input type="checkbox" ${it.done?'checked':''}><div><div class="itemName">${escapeHtml(it.name)}</div><div class="itemMeta">${escapeHtml(it.store||'Sin tienda')}${it.note?` · ${escapeHtml(it.note)}`:''}${it.price?` · ${money(it.price)}`:''}</div></div><button class="delete" aria-label="Eliminar">×</button></div>`).join(''):'<div class="empty">Todavía no hay encargos. Disfruta estos cinco minutos de paz.</div>';$$('#shoppingList .shopItem').forEach(row=>{row.querySelector('input').addEventListener('change',e=>{const a=store.get('mcallen.shopping',[]);a[row.dataset.i].done=e.target.checked;store.set('mcallen.shopping',a);renderShopping()});row.querySelector('.delete').addEventListener('click',()=>{const a=store.get('mcallen.shopping',[]);a.splice(row.dataset.i,1);store.set('mcallen.shopping',a);renderShopping()})})}
+function escapeHtml(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+$('#addShopItem').addEventListener('click',()=>openSheet('itemSheet'));$('#saveItem').addEventListener('click',()=>{const name=$('#itemName').value.trim();if(!name){toast('Escribe el artículo');return}const a=store.get('mcallen.shopping',[]);a.push({name,store:$('#itemStore').value.trim(),price:$('#itemPrice').value,note:$('#itemNote').value.trim(),done:false});store.set('mcallen.shopping',a);['#itemName','#itemStore','#itemPrice','#itemNote'].forEach(s=>$(s).value='');closeSheets();renderShopping();toast('Artículo agregado')});
+const notes=$('#notes');notes.value=store.get('mcallen.notes','');notes.addEventListener('input',()=>{store.set('mcallen.notes',notes.value);$('#notesSaved').textContent='Guardado ✓';clearTimeout(state.noteTimer);state.noteTimer=setTimeout(()=>$('#notesSaved').textContent='Guardado automático en este dispositivo.',1200)});
+function openSheet(id){$('#'+id).classList.remove('hidden')}function closeSheets(){$$('.sheet').forEach(s=>s.classList.add('hidden'))}$$('[data-close-sheet]').forEach(b=>b.addEventListener('click',closeSheets));$$('.sheet').forEach(s=>s.addEventListener('click',e=>{if(e.target===s)closeSheets()}));
+$('#routeSettings').addEventListener('click',()=>{const s=store.get('mcallen.settings',{days:2,pace:'family',hotel:'comfort'});$('#tripDays').value=s.days;$('#tripPace').value=s.pace;$('#tripHotel').value=s.hotel;openSheet('settingsSheet')});$('#saveSettings').addEventListener('click',()=>{const s={days:Number($('#tripDays').value),pace:$('#tripPace').value,hotel:$('#tripHotel').value};store.set('mcallen.settings',s);$('#routeSummary').textContent=`${s.days} día${s.days===1?'':'s'} · ${s.pace==='family'?'ritmo familiar':s.pace==='fast'?'compras intensivas':'ritmo tranquilo'} · ${s.hotel==='home2'?'Home2 Suites':'Comfort Inn Pharr'}.`;closeSheets();renderRoute();toast('Itinerario actualizado')});
+const pinData=[['plaza',91,368,1],['target',153,327,2],['bestbuy',207,323,3],['comfort',302,294,4],['grand',236,351,5],['hobby',91,112,6],['home2',52,320,7],['anzalduas',49,447,8],['hidalgo',133,452,9]];$('#mapPins').innerHTML=pinData.map(([id,x,y,n])=>`<g class="pin" data-id="${id}" transform="translate(${x} ${y})"><circle r="15"/><text y="1">${n}</text></g>`).join('');$$('.pin').forEach(g=>g.addEventListener('click',()=>{const p=spots.find(x=>x.id===g.dataset.id);$('#mapInfo').innerHTML=`<b>${p.icon} ${p.name}</b><p>${p.desc}</p><div class="actions"><a class="btn primary" href="${mapUrl(p.query)}" target="_blank" rel="noopener">Maps</a><a class="btn" href="${wazeUrl(p.query)}" target="_blank" rel="noopener">Waze</a></div>`}));
+function exportState(){return {version:APP_VERSION,settings:store.get('mcallen.settings',{days:2,pace:'family',hotel:'comfort'}),shopping:store.get('mcallen.shopping',[]),checks:store.get('mcallen.checks',{}),budget:store.get('mcallen.budget',{total:'',spent:''}),notes:store.get('mcallen.notes','')}}
+function encodePlan(data){return btoa(unescape(encodeURIComponent(JSON.stringify(data))))}function decodePlan(s){return JSON.parse(decodeURIComponent(escape(atob(s))))}
+function sharedUrl(){const u=new URL(location.href);u.hash='plan='+encodePlan(exportState());return u.toString()}
+async function shareUrl(url,text='Guía familiar McAllen Go'){try{if(navigator.share)await navigator.share({title:'McAllen Go',text,url});else{await navigator.clipboard.writeText(url);toast('Enlace copiado')}}catch(e){if(e.name!=='AbortError')toast('No se pudo compartir')}}
+$('#shareTop').addEventListener('click',()=>shareUrl(location.href));$('#sharePlan').addEventListener('click',()=>shareUrl(sharedUrl(),'Te comparto nuestro plan de McAllen'));$('#shareAll').addEventListener('click',()=>shareUrl(sharedUrl(),'Te comparto la guía y el plan de McAllen'));$('#copyLink').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(sharedUrl());toast('Enlace con plan copiado')}catch{toast('No se pudo copiar')}});$('#downloadBackup').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(exportState(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mcallen-go-respaldo.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});
+function checkSharedPlan(){const m=location.hash.match(/^#plan=(.+)$/);if(!m)return;try{state.pendingImport=decodePlan(m[1]);openSheet('importSheet')}catch{location.hash=''}}
+$('#importPlan').addEventListener('click',()=>{const d=state.pendingImport;if(!d)return;store.set('mcallen.settings',d.settings||{});store.set('mcallen.shopping',d.shopping||[]);store.set('mcallen.checks',d.checks||{});store.set('mcallen.budget',d.budget||{});store.set('mcallen.notes',d.notes||'');notes.value=d.notes||'';history.replaceState(null,'',location.pathname);closeSheets();renderShopping();renderChecklist();renderBudget();toast('Plan importado')});$('#ignoreImport').addEventListener('click',()=>{history.replaceState(null,'',location.pathname);closeSheets()});
+let deferredPrompt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;$('#installText').textContent='Tu dispositivo permite instalarla como app.'});window.addEventListener('appinstalled',()=>{toast('McAllen Go instalada');$('#installCard').classList.add('hidden')});
+function isIOS(){return /iphone|ipad|ipod/i.test(navigator.userAgent)}function isStandalone(){return matchMedia('(display-mode: standalone)').matches||navigator.standalone}
+function installFlow(){if(isStandalone()){toast('Ya está instalada');return}const box=$('#installInstructions');if(deferredPrompt){box.innerHTML='<p>Instálala para abrirla a pantalla completa y conservar la guía sin conexión.</p>';$('#triggerInstall').classList.remove('hidden')}else if(isIOS()){box.innerHTML='<p><b>En iPhone:</b></p><ol><li>Ábrela en Safari.</li><li>Toca el botón <b>Compartir</b>.</li><li>Elige <b>Agregar a pantalla de inicio</b>.</li><li>Confirma con <b>Agregar</b>.</li></ol>';$('#triggerInstall').classList.add('hidden')}else{box.innerHTML='<p>Abre el menú del navegador y elige <b>Instalar aplicación</b> o <b>Agregar a pantalla de inicio</b>.</p>';$('#triggerInstall').classList.add('hidden')}openSheet('installSheet')}
+['#installTop','#installMain','#installMore'].forEach(s=>$(s).addEventListener('click',installFlow));$('#triggerInstall').addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;closeSheets()});
+function updateOnline(){const off=!navigator.onLine;$('#offlineBanner').classList.toggle('hidden',!off)}window.addEventListener('online',updateOnline);window.addEventListener('offline',updateOnline);updateOnline();
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+renderBridges();renderRoute();renderPlaces();renderShopping();renderChecklist();renderBudget();renderProgress();checkSharedPlan();
 </script>
 </body>
 </html>
