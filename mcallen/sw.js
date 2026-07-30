@@ -1,5 +1,6 @@
-const CACHE='mcallen-go-v4.0.0';
-const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg','./core.css','./visual.css','./v4.css','./loader.js','./ui-hero.html','./ui-home.html','./ui-route.html','./ui-content.html','./ui-overlays.html','./data.js','./core.js','./features.js','./search.js','./share.js'];
+const VERSION='4.0.0';
+const CACHE='mcallen-go-v'+VERSION;
+const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg','./core.css','./visual.css','./v4.css','./loader.js?v='+VERSION,'./ui-hero.html?v='+VERSION,'./ui-home.html?v='+VERSION,'./ui-route.html?v='+VERSION,'./ui-content.html?v='+VERSION,'./ui-overlays.html?v='+VERSION,'./data.js?v='+VERSION,'./core.js?v='+VERSION,'./features.js?v='+VERSION,'./search.js?v='+VERSION,'./share.js?v='+VERSION];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).then(r=>{const c=r.clone();caches.open(CACHE).then(x=>x.put('./index.html',c));return r}).catch(()=>caches.match('./index.html')));return}e.respondWith(fetch(e.request).then(r=>{const x=r.clone();caches.open(CACHE).then(k=>k.put(e.request,x));return r}).catch(()=>caches.match(e.request))) });
