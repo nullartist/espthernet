@@ -4,11 +4,19 @@
     <p id="routeSummary">2 días · ritmo familiar · hotel en Pharr o Convention Center.</p>
     <div class="actions"><button class="btn primary" id="navCurrentDay">Navegar ruta</button><button class="btn" id="sharePlan">Compartir plan</button></div>
   </article>
+
+  <article class="card gpsCard">
+    <div class="row between"><div><span class="tag gold">GPS del teléfono</span><h2>Modo “Estamos aquí”</h2></div><button class="btn primary" id="gpsToggle">Usar mi ubicación</button></div>
+    <p id="gpsStatus">Activa el GPS para ver distancias y la siguiente parada. Tu ubicación no se almacena.</p>
+    <div class="gpsNext" id="gpsNext"><b>Sin ubicación activa</b><small>Disponible en HTTPS con permiso del teléfono.</small></div>
+    <div class="actions"><button class="btn gold" id="navNextStop">Navegar a la siguiente</button></div>
+  </article>
+
   <div class="chips" id="dayChips"><button class="chip active" data-day="1">Día 1 · Sur/Jackson</button><button class="chip" data-day="2">Día 2 · Norte</button><button class="chip" data-day="3">Extra · Outlet</button></div>
   <article class="card"><div id="routeStops"></div></article>
   <article class="card mapCard">
-    <div class="mapTop"><h3>Mapa esquemático</h3><p>Toca los puntos para abrir navegación. No pretende reemplazar Maps; tampoco cobra por fingirlo.</p></div>
-    <div class="mapWrap"><svg id="miniMap" viewBox="0 0 390 510" role="img" aria-label="Mapa ilustrado de McAllen y Pharr">
+    <div class="mapTop"><span class="tag" id="mapDayTitle">Día 1 · Sur / Jackson</span><h3>Mapa dinámico del día</h3><p>Los puntos y la línea cambian con el día seleccionado y con los lugares que agregues desde la búsqueda.</p></div>
+    <div class="mapWrap"><svg id="miniMap" viewBox="0 0 390 510" role="img" aria-label="Mapa ilustrado dinámico de McAllen y Pharr">
       <defs><linearGradient id="landG" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#def2ea"/><stop offset="1" stop-color="#f8ecd8"/></linearGradient><linearGradient id="waterG" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#72cbd6"/><stop offset="1" stop-color="#a5e1de"/></linearGradient></defs>
       <rect width="390" height="510" fill="url(#landG)"/>
       <path d="M-15 423C58 387 144 406 220 373s132-30 189-72" stroke="url(#waterG)" stroke-width="31" fill="none"/><path d="M-10 422C62 389 144 408 222 375s131-31 187-73" stroke="#e6ffff" stroke-width="3" fill="none" opacity=".65"/>
