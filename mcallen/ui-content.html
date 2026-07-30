@@ -1,5 +1,11 @@
 <section id="places" class="screen">
-  <input class="search" id="placeSearch" placeholder="Buscar tienda, hotel, comida o zona…" autocomplete="off">
+  <article class="card searchCard">
+    <div class="row between"><div><span class="tag">Búsqueda real</span><h2>Encuentra cualquier lugar</h2></div><span class="searchMark">⌕</span></div>
+    <p>Busca por nombre o tipo, por ejemplo <b>Pizza Hut</b>, farmacia, café o juguetería. La consulta se hace sólo al pulsar el botón.</p>
+    <div class="searchRow"><input class="search" id="placeSearch" placeholder="Pizza Hut, café, farmacia…" autocomplete="off"><button class="btn primary" id="onlineSearchBtn">Buscar en McAllen</button></div>
+    <div class="subtle">Los resultados incluyen ubicación y horario cuando OpenStreetMap lo tiene publicado. Verifica cambios recientes en Maps.</div>
+  </article>
+  <div id="onlineResults"></div>
   <div class="chips" id="placeFilters"></div>
   <div class="placeGrid" id="placeGrid"></div>
 </section>
@@ -31,9 +37,17 @@
 </section>
 
 <section id="more" class="screen">
+  <article class="card storageCard">
+    <div class="row between"><div><span class="tag">Persistencia</span><h2>Tu información está guardada</h2></div><div class="storageDot" aria-hidden="true"></div></div>
+    <p>Se conserva en este navegador: itinerario, lugares agregados, checklist, presupuesto, notas y progreso.</p>
+    <div class="storageStats"><div><b id="storageStatus">Comprobando…</b><small id="lastSavedAt">—</small></div><div><b id="savedPlaceCount">0 lugares agregados</b><small id="storageUsage">Uso mínimo</small></div></div>
+    <div class="noticeMini">No se sincroniza automáticamente entre teléfonos. Puede perderse al borrar datos del navegador o usar modo privado; por eso conviene descargar un respaldo.</div>
+    <input type="file" id="restoreFile" accept="application/json,.json" hidden>
+    <div class="actions"><button class="btn primary" id="downloadBackup">Descargar respaldo</button><button class="btn" id="restoreBackup">Restaurar respaldo</button><button class="btn" id="protectStorage">Proteger datos</button></div>
+  </article>
   <article class="card">
-    <h2>Compartir y respaldar</h2><p>El plan puede viajar dentro del enlace de WhatsApp. No requiere cuenta ni servidor.</p>
-    <div class="actions"><button class="btn primary" id="shareAll">Compartir guía + plan</button><button class="btn" id="copyLink">Copiar enlace</button><button class="btn" id="downloadBackup">Descargar respaldo</button></div>
+    <h2>Compartir</h2><p>El plan puede viajar dentro del enlace de WhatsApp. Incluye lugares agregados e itinerarios personalizados.</p>
+    <div class="actions"><button class="btn primary" id="shareAll">Compartir guía + plan</button><button class="btn" id="copyLink">Copiar enlace</button></div>
   </article>
   <article class="card">
     <h2>Notas</h2><div class="field"><textarea id="notes" placeholder="Tallas, encargos, número de habitación, recordatorios…"></textarea></div><div class="subtle" id="notesSaved">Guardado automático en este dispositivo.</div>
@@ -42,9 +56,9 @@
     <h2>Instalar en iPhone</h2><p>Abre esta página en Safari, toca <b>Compartir</b> y luego <b>Agregar a pantalla de inicio</b>. En Android, Chrome mostrará la opción de instalar.</p><button class="btn dark full" id="installMore">Instalar / instrucciones</button>
   </article>
   <article class="card">
-    <h2>Fuentes y límites</h2><p>Los horarios pueden cambiar. La aplicación calcula aperturas por horario, pero no inventa tiempos de espera: para eso abre CBP.</p>
-    <div class="sourceList"><a href="https://bwt.cbp.gov/viewAllPorts" target="_blank" rel="noopener">CBP · Border Wait Times</a><a href="https://puenteinternacionalanzalduas.com/Home/Contact" target="_blank" rel="noopener">Puente Anzaldúas · horario oficial</a><a href="https://bridge.pharr-tx.gov/hours-of-operations/" target="_blank" rel="noopener">Puente Pharr · horario oficial</a><a href="https://www.hilton.com/en/hotels/mfewght-home2-suites-mcallen/" target="_blank" rel="noopener">Home2 Suites McAllen</a></div>
+    <h2>Fuentes y límites</h2><p>Los horarios pueden cambiar. La búsqueda usa OpenStreetMap bajo demanda y no hace autocompletado ni consultas automáticas.</p>
+    <div class="sourceList"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a><a href="https://bwt.cbp.gov/viewAllPorts" target="_blank" rel="noopener">CBP · Border Wait Times</a><a href="https://puenteinternacionalanzalduas.com/Home/Contact" target="_blank" rel="noopener">Puente Anzaldúas · horario oficial</a><a href="https://bridge.pharr-tx.gov/hours-of-operations/" target="_blank" rel="noopener">Puente Pharr · horario oficial</a></div>
   </article>
-  <div class="footer">McAllen Go · versión 3.0 · datos guardados localmente · navegación y filas requieren internet.</div>
+  <div class="footer">McAllen Go · versión 4.0 · GPS no almacenado · búsqueda y navegación requieren internet.</div>
 </section>
 </main>
