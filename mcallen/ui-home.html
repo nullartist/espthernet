@@ -1,0 +1,64 @@
+<main class="wrap">
+<section id="home" class="screen active">
+  <article class="card visualDash">
+    <div class="dashLead">
+      <span class="tag gold">Tu viaje de un vistazo</span>
+      <h2>Una ruta clara antes de encender el auto</h2>
+      <p>El tablero combina progreso, preparación y presupuesto. Todo se actualiza conforme marcas lugares, checklist y gastos.</p>
+      <div class="routeRibbon" aria-hidden="true"><div class="routeNode active"><i>🌉</i>Cruce</div><div class="routeNode"><i>🥞</i>Desayuno</div><div class="routeNode"><i>🛍️</i>Compras</div><div class="routeNode"><i>🥡</i>Cena</div><div class="routeNode"><i>🏨</i>Hotel</div></div>
+      <div class="actions"><button class="btn primary" data-go="route">Abrir ruta</button><button class="btn ghost" data-go="plan">Ver plan</button></div>
+    </div>
+    <div class="dashArt" aria-hidden="true">
+      <svg viewBox="0 0 360 260">
+        <defs><linearGradient id="dashSky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8f5ef"/><stop offset="1" stop-color="#fff3d9"/></linearGradient></defs>
+        <rect width="360" height="260" fill="url(#dashSky)"/><circle cx="291" cy="48" r="28" fill="#ffd170"/>
+        <path d="M0 150C66 119 123 127 177 143s112 22 183-6v123H0z" fill="#bfe3d5"/><path d="M0 181c74-28 143-20 202 7s111 23 158 7v65H0z" fill="#78bdab"/>
+        <path d="M-10 236c81-87 174-90 380-18" fill="none" stroke="#153849" stroke-width="39"/><path d="M-10 236c81-87 174-90 380-18" fill="none" stroke="#fff0b4" stroke-width="3" stroke-dasharray="18 15"/>
+        <g transform="translate(210 161)" filter="drop-shadow(0 8px 7px rgba(30,65,75,.2))"><rect x="-50" y="18" width="100" height="34" rx="12" fill="#ff984e"/><path d="M-36 20l13-24h44l20 24" fill="#ffc15c"/><path d="M-20 0h22v16h-30zM8 0h14l13 16H8z" fill="#c6ece9"/><circle cx="-29" cy="51" r="10" fill="#153849"/><circle cx="31" cy="51" r="10" fill="#153849"/></g>
+        <g transform="translate(65 118)"><rect x="-28" y="15" width="56" height="48" rx="6" fill="#fff"/><path d="M-35 18h70L25 0h-50z" fill="#ffb84d"/><rect x="-13" y="34" width="26" height="29" rx="3" fill="#0aa79e"/><circle cx="0" cy="8" r="6" fill="#fff"/></g>
+        <g transform="translate(300 132)"><rect x="-25" y="12" width="50" height="44" rx="6" fill="#fff"/><path d="M-31 15h62L21 0h-42z" fill="#5c72aa"/><rect x="-10" y="29" width="20" height="27" rx="3" fill="#ffb84d"/></g>
+        <g fill="#327b69"><circle cx="124" cy="128" r="15"/><rect x="121" y="138" width="6" height="28" rx="3"/><circle cx="330" cy="96" r="13"/><rect x="327" y="107" width="6" height="25" rx="3"/></g>
+      </svg>
+    </div>
+    <div class="dashMeters">
+      <div class="miniMeter"><div class="meterIcon" id="dashProgressRing"><span id="dashProgressText">0%</span></div><strong>Recorrido</strong><small>Lugares visitados</small></div>
+      <div class="miniMeter"><div class="meterIcon meterBridge"><span>🌉</span></div><strong id="dashBridge">Hidalgo</strong><small>Puente disponible</small></div>
+      <div class="miniMeter"><div class="meterIcon meterBudget" id="dashBudgetRing"><span>US$</span></div><strong class="money" id="dashBudget">—</strong><small>Presupuesto libre</small></div>
+    </div>
+  </article>
+
+  <article class="card bridgeHero">
+    <div class="row between"><div><span class="tag">Actualizado 2026</span><h2>Asesor de cruces</h2></div><button class="btn ghost" id="refreshBridge">Actualizar</button></div>
+    <p>No adivina filas —todavía no somos brujos fronterizos—, pero sí evalúa horarios oficiales. Antes de arrancar, abre CBP para comparar esperas.</p>
+    <div class="bridgeList" id="bridgeList"></div>
+    <div class="actions"><a class="btn primary" href="https://bwt.cbp.gov/viewAllPorts" target="_blank" rel="noopener">Ver filas CBP</a><a class="btn" href="https://puenteinternacionalanzalduas.com/Home/Contact" target="_blank" rel="noopener">Horario Anzaldúas</a><a class="btn" href="https://bridge.pharr-tx.gov/hours-of-operations/" target="_blank" rel="noopener">Horario Pharr</a></div>
+  </article>
+
+  <article class="card">
+    <div class="row between"><div><span class="tag gold">Recomendado</span><h2>Plan familiar de 2 días</h2></div><div class="metric" id="homeProgress">0%</div></div>
+    <p>Sur/Jackson el primer día; norte/Trenton el segundo. Así las tiendas están agrupadas y los niños conservan una cantidad jurídicamente aceptable de paciencia.</p>
+    <div class="progressTrack"><div class="progressFill" id="homeProgressBar" style="width:0%"></div></div>
+    <div class="actions"><button class="btn primary" data-go="route">Ver itinerario</button><button class="btn gold" id="navDay1">Navegar Día 1</button></div>
+  </article>
+
+  <div class="quickGrid">
+    <button class="quick" data-quick="shopping"><span>🛍️</span><b>Compras</b><small>Busca tiendas y marca visitadas.</small></button>
+    <button class="quick" data-quick="food"><span>🥤</span><b>Comida</b><small>Grand China, IHOP y malteadas.</small></button>
+    <button class="quick" data-quick="budget"><span>💵</span><b>Presupuesto</b><small>Controla gastos en US$.</small></button>
+    <button class="quick" data-quick="kids"><span>🦖</span><b>Con niños</b><small>Pausas para evitar motín.</small></button>
+  </div>
+
+  <article class="card">
+    <span class="tag">Modo familiar</span><h2>Antídotos contra el “¿ya nos vamos?”</h2><p>Tres accesos rápidos para romper el día cuando el grupo necesita comida, descanso o una actividad distinta.</p>
+    <div class="familyStrip">
+      <button class="familyTile" data-family="food"><span>🥤</span><b>Comida rápida</b><small>Malteadas, desayuno y buffet sin cruzar media ciudad.</small></button>
+      <button class="familyTile" data-family="kids"><span>🦖</span><b>Pausa con niños</b><small>IMAS o Quinta Mazatlán para reiniciar la paciencia.</small></button>
+      <button class="familyTile" data-family="essentials"><span>💊</span><b>Rescate práctico</b><small>Farmacia, H‑E‑B y básicos cerca de la ruta.</small></button>
+    </div>
+  </article>
+
+  <article class="card installHint" id="installCard">
+    <div class="row"><div style="font-size:30px">📲</div><div class="grow"><h3>Instálala como app</h3><p id="installText">Se abre desde WhatsApp y puede quedar en la pantalla de inicio.</p></div></div>
+    <button class="btn dark full" id="installMain">Instalar / ver instrucciones</button>
+  </article>
+</section>
