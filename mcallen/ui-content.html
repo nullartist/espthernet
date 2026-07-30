@@ -1,0 +1,50 @@
+<section id="places" class="screen">
+  <input class="search" id="placeSearch" placeholder="Buscar tienda, hotel, comida o zona…" autocomplete="off">
+  <div class="chips" id="placeFilters"></div>
+  <div class="placeGrid" id="placeGrid"></div>
+</section>
+
+<section id="plan" class="screen">
+  <div class="twoCol">
+    <article class="card">
+      <div class="row between"><div><span class="tag gold">US$</span><h2>Presupuesto</h2></div><button class="btn ghost" id="resetBudget">Reiniciar</button></div>
+      <div class="formGrid">
+        <div class="field"><label for="budgetTotal">Presupuesto total</label><input id="budgetTotal" type="number" min="0" step="1" inputmode="decimal" placeholder="1000"></div>
+        <div class="field"><label for="budgetSpent">Gastado</label><input id="budgetSpent" type="number" min="0" step="1" inputmode="decimal" placeholder="0"></div>
+      </div>
+      <div class="planVisual"><div class="bigRing gold" id="budgetRing"><span id="budgetRingText">0%</span></div><div><b>Salud del presupuesto</b><p id="budgetVisualText">Define un presupuesto para comenzar.</p><div class="budgetSpark" aria-hidden="true"><i style="--h:30%"></i><i style="--h:58%"></i><i style="--h:42%"></i><i style="--h:78%"></i><i style="--h:64%"></i><i style="--h:88%"></i><i style="--h:52%"></i></div></div></div><div class="totalBox" style="margin-top:12px"><small>Disponible</small><div class="metric money" id="budgetRemaining">US$0.00</div><div class="subtle" id="budgetMessage" style="color:#cde3e5">Define un presupuesto para comenzar.</div></div>
+    </article>
+    <article class="card">
+      <span class="tag">Progreso</span><h2>Viaje listo</h2><div class="planVisual"><div class="bigRing" id="readyRing"><span id="tripReady">0%</span></div><div><b>Preparación general</b><p id="tripReadyText">Completa checklist y lugares para ver el progreso.</p><div class="progressTrack"><div class="progressFill" id="tripReadyBar" style="width:0%"></div></div></div></div>
+    </article>
+  </div>
+
+  <article class="card">
+    <div class="row between"><div><h2>Lista de compras</h2><p>Agrega encargos, tallas y tienda sugerida.</p></div><button class="btn primary" id="addShopItem">＋ Agregar</button></div>
+    <div id="shoppingList"></div>
+  </article>
+
+  <article class="card">
+    <div class="row between"><div><h2>Checklist del viaje</h2><p>Documentos, señal, cargadores y la cajuela optimista.</p></div><button class="btn ghost" id="resetChecklist">Reiniciar</button></div>
+    <div id="checklist"></div>
+  </article>
+</section>
+
+<section id="more" class="screen">
+  <article class="card">
+    <h2>Compartir y respaldar</h2><p>El plan puede viajar dentro del enlace de WhatsApp. No requiere cuenta ni servidor.</p>
+    <div class="actions"><button class="btn primary" id="shareAll">Compartir guía + plan</button><button class="btn" id="copyLink">Copiar enlace</button><button class="btn" id="downloadBackup">Descargar respaldo</button></div>
+  </article>
+  <article class="card">
+    <h2>Notas</h2><div class="field"><textarea id="notes" placeholder="Tallas, encargos, número de habitación, recordatorios…"></textarea></div><div class="subtle" id="notesSaved">Guardado automático en este dispositivo.</div>
+  </article>
+  <article class="card installHint">
+    <h2>Instalar en iPhone</h2><p>Abre esta página en Safari, toca <b>Compartir</b> y luego <b>Agregar a pantalla de inicio</b>. En Android, Chrome mostrará la opción de instalar.</p><button class="btn dark full" id="installMore">Instalar / instrucciones</button>
+  </article>
+  <article class="card">
+    <h2>Fuentes y límites</h2><p>Los horarios pueden cambiar. La aplicación calcula aperturas por horario, pero no inventa tiempos de espera: para eso abre CBP.</p>
+    <div class="sourceList"><a href="https://bwt.cbp.gov/viewAllPorts" target="_blank" rel="noopener">CBP · Border Wait Times</a><a href="https://puenteinternacionalanzalduas.com/Home/Contact" target="_blank" rel="noopener">Puente Anzaldúas · horario oficial</a><a href="https://bridge.pharr-tx.gov/hours-of-operations/" target="_blank" rel="noopener">Puente Pharr · horario oficial</a><a href="https://www.hilton.com/en/hotels/mfewght-home2-suites-mcallen/" target="_blank" rel="noopener">Home2 Suites McAllen</a></div>
+  </article>
+  <div class="footer">McAllen Go · versión 3.0 · datos guardados localmente · navegación y filas requieren internet.</div>
+</section>
+</main>
