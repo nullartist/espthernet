@@ -1,0 +1,31 @@
+<nav class="bottom" aria-label="Navegación principal">
+  <button class="navBtn active" data-screen="home"><span>⌂</span>Hoy</button>
+  <button class="navBtn" data-screen="route"><span>🧭</span>Ruta</button>
+  <button class="navBtn" data-screen="places"><span>🛍️</span>Lugares</button>
+  <button class="navBtn" data-screen="plan"><span>✓</span>Plan</button>
+  <button class="navBtn" data-screen="more"><span>•••</span>Más</button>
+</nav>
+
+<div id="installSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Instalar McAllen Go</h2><div id="installInstructions"></div><div class="actions"><button class="btn primary" id="triggerInstall">Instalar ahora</button><button class="btn ghost" data-close-sheet>Cerrar</button></div></div>
+</div>
+<div id="settingsSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Ajustar itinerario</h2>
+    <div class="field"><label for="tripDays">Duración</label><select id="tripDays"><option value="1">1 día exprés</option><option value="2" selected>2 días familiar</option><option value="3">3 días + outlet</option></select></div>
+    <div class="field" style="margin-top:10px"><label for="tripPace">Ritmo</label><select id="tripPace"><option value="family" selected>Familiar / con niños</option><option value="fast">Compras intensivas</option><option value="relaxed">Tranquilo</option></select></div>
+    <div class="field" style="margin-top:10px"><label for="tripHotel">Base</label><select id="tripHotel"><option value="home2">Home2 Suites McAllen</option><option value="comfort" selected>Comfort Inn Pharr</option></select></div>
+    <div class="actions"><button class="btn primary" id="saveSettings">Aplicar</button><button class="btn ghost" data-close-sheet>Cerrar</button></div>
+  </div>
+</div>
+<div id="itemSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Agregar a la lista</h2>
+    <div class="field"><label for="itemName">Artículo</label><input id="itemName" placeholder="Ej. tenis para Ana"></div>
+    <div class="formGrid" style="margin-top:10px"><div class="field"><label for="itemStore">Tienda</label><input id="itemStore" placeholder="Ross"></div><div class="field"><label for="itemPrice">Estimado US$</label><input id="itemPrice" type="number" min="0" step="1" inputmode="decimal" placeholder="40"></div></div>
+    <div class="field" style="margin-top:10px"><label for="itemNote">Talla / nota</label><input id="itemNote" placeholder="Talla 6, negro"></div>
+    <div class="actions"><button class="btn primary" id="saveItem">Agregar</button><button class="btn ghost" data-close-sheet>Cerrar</button></div>
+  </div>
+</div>
+<div id="importSheet" class="sheet hidden" role="dialog" aria-modal="true">
+  <div class="sheetPanel"><div class="sheetHandle"></div><h2>Te compartieron un plan</h2><p>Este enlace contiene una ruta, lista y presupuesto. Puedes importarlos a este dispositivo.</p><div class="actions"><button class="btn primary" id="importPlan">Importar plan</button><button class="btn ghost" id="ignoreImport">Sólo abrir guía</button></div></div>
+</div>
+<div id="toast" class="toast"></div>
