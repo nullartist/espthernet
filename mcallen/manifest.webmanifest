@@ -1,0 +1,21 @@
+{
+  "name": "McAllen Go · Guía familiar",
+  "short_name": "McAllen Go",
+  "description": "Guía familiar interactiva para compras, cruces, comida y hotel en McAllen y Pharr.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f3f6f7",
+  "theme_color": "#082337",
+  "categories": ["travel", "shopping", "navigation"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
