@@ -1,0 +1,29 @@
+<section id="route" class="screen">
+  <article class="card">
+    <div class="row between"><div><span class="tag">Ruta inteligente</span><h2>Itinerario</h2></div><button class="btn ghost" id="routeSettings">Ajustar</button></div>
+    <p id="routeSummary">2 días · ritmo familiar · hotel en Pharr o Convention Center.</p>
+    <div class="actions"><button class="btn primary" id="navCurrentDay">Navegar ruta</button><button class="btn" id="sharePlan">Compartir plan</button></div>
+  </article>
+  <div class="chips" id="dayChips"><button class="chip active" data-day="1">Día 1 · Sur/Jackson</button><button class="chip" data-day="2">Día 2 · Norte</button><button class="chip" data-day="3">Extra · Outlet</button></div>
+  <article class="card"><div id="routeStops"></div></article>
+  <article class="card mapCard">
+    <div class="mapTop"><h3>Mapa esquemático</h3><p>Toca los puntos para abrir navegación. No pretende reemplazar Maps; tampoco cobra por fingirlo.</p></div>
+    <div class="mapWrap"><svg id="miniMap" viewBox="0 0 390 510" role="img" aria-label="Mapa ilustrado de McAllen y Pharr">
+      <defs><linearGradient id="landG" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#def2ea"/><stop offset="1" stop-color="#f8ecd8"/></linearGradient><linearGradient id="waterG" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#72cbd6"/><stop offset="1" stop-color="#a5e1de"/></linearGradient></defs>
+      <rect width="390" height="510" fill="url(#landG)"/>
+      <path d="M-15 423C58 387 144 406 220 373s132-30 189-72" stroke="url(#waterG)" stroke-width="31" fill="none"/><path d="M-10 422C62 389 144 408 222 375s131-31 187-73" stroke="#e6ffff" stroke-width="3" fill="none" opacity=".65"/>
+      <g opacity=".18" fill="#25846e"><circle cx="35" cy="62" r="30"/><circle cx="357" cy="84" r="44"/><circle cx="336" cy="280" r="34"/></g>
+      <path class="road main" d="M14 332L378 332"/><path class="road" d="M91 493L91 59"/><path class="road" d="M207 480L207 129"/><path class="road" d="M302 471L302 248"/><path class="road" d="M34 201L357 201"/><path class="road" d="M34 111L357 111"/>
+      <text x="15" y="35" class="zoneLabel">NORTE · TRENTON</text><text x="15" y="236" class="zoneLabel">SUR · LA PLAZA</text><text x="221" y="366" class="zoneLabel">PHARR / JACKSON</text><text x="17" y="475" class="zoneLabel">FRONTERA</text>
+      <text x="268" y="322" class="roadLabel">I‑2 / Expressway</text><text x="99" y="78" class="roadLabel">10th St</text><text x="214" y="151" class="roadLabel">Jackson</text><text x="309" y="269" class="roadLabel">Cage</text><text x="253" y="191" class="roadLabel">Nolana</text><text x="252" y="101" class="roadLabel">Trenton</text>
+      <g class="mapBuilding" transform="translate(50 248)"><rect width="67" height="44" rx="8" fill="#fff"/><path d="M-5 8h77L61-7H8z" fill="#f2aa45"/><rect x="24" y="19" width="20" height="25" rx="3" fill="#087e78"/><text x="33" y="12" text-anchor="middle" font-size="8" font-weight="900" fill="#7a4800">MALL</text></g>
+      <g class="mapBuilding" transform="translate(224 255)"><rect width="50" height="39" rx="7" fill="#fff"/><path d="M-4 8h58L45-5H7z" fill="#ef6f62"/><rect x="18" y="18" width="15" height="21" rx="3" fill="#ffca65"/></g>
+      <g class="mapBuilding" transform="translate(275 355)"><rect width="58" height="42" rx="8" fill="#fff"/><rect x="8" y="8" width="42" height="10" rx="3" fill="#5c72aa"/><rect x="22" y="24" width="15" height="18" rx="3" fill="#ffb84d"/><text x="29" y="16" text-anchor="middle" font-size="7" font-weight="900" fill="#fff">HOTEL</text></g>
+      <g class="mapBuilding" transform="translate(47 65)"><rect width="70" height="38" rx="7" fill="#fff"/><path d="M-5 7h80L64-6H9z" fill="#0aa79e"/><rect x="25" y="16" width="20" height="22" rx="3" fill="#ffb84d"/></g>
+      <g transform="translate(89 413)"><path d="M-35 23C-15-8 14-8 35 23M-35 23H35" fill="none" stroke="#fff" stroke-width="7"/><path d="M-35 23H35" stroke="#153849" stroke-width="3"/></g><g transform="translate(302 405)"><path d="M-35 23C-15-8 14-8 35 23M-35 23H35" fill="none" stroke="#fff" stroke-width="7"/><path d="M-35 23H35" stroke="#153849" stroke-width="3"/></g>
+      <g class="mapTree" transform="translate(158 162)"><circle cy="0" r="12" fill="#45a677"/><rect x="-3" y="8" width="6" height="16" rx="3" fill="#7e5c3b"/></g><g class="mapTree" transform="translate(348 228)"><circle cy="0" r="12" fill="#45a677"/><rect x="-3" y="8" width="6" height="16" rx="3" fill="#7e5c3b"/></g><g class="mapTree" transform="translate(150 382)"><circle cy="0" r="12" fill="#45a677"/><rect x="-3" y="8" width="6" height="16" rx="3" fill="#7e5c3b"/></g>
+      <g id="mapPins"></g>
+    </svg></div>
+    <div class="mapInfo" id="mapInfo"><b>Selecciona un punto</b><p>Verás aquí su información y botones de navegación.</p></div>
+  </article>
+</section>
